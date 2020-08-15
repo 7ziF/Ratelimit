@@ -51,8 +51,10 @@ end
 
 function ratelimit:Remove(player)
 	for _,v in next, ratelimit do
-		if v[tostring(player.UserId)] then
-			table.remove(v, tostring(player.UserId))
+		if typeof(v) ~= 'function' then
+			if v[tostring(player.UserId)] then
+				table.remove(v, tostring(player.UserId))
+			end
 		end
 	end
 end
