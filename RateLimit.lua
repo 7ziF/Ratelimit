@@ -6,7 +6,7 @@
   RateLimiter:New("RemoteRequest-1", 3)
   local ReturnValue = "hello"
   game.ReplicatedStorage.RemoteRequest.OnServerInvoke:Connect(function(Player)
-      local OnCooldown = RateLimiter:Add(player, "RemoteRequest-1")
+      local OnCooldown = RateLimiter:Add(Player, "RemoteRequest-1")
       if OnCooldown then
           return "CoolDown"
       else
